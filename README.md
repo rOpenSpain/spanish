@@ -1,7 +1,8 @@
 
 
 # spanish: R package for functions on spanish data [![Build Status](https://travis-ci.org/verajosemanuel/spanish.svg?branch=master)](https://travis-ci.org/verajosemanuel/spanish)
-<img src="tools/readme/logo.png" align="right" />
+[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/spanish)](https://cran.r-project.org/package=spanish)
+<img src="tools/readme/logo.png" align="right" /> 
 
 ### Installation: ###
 
