@@ -1,6 +1,6 @@
-#' spanish: A package for spanish related data functions.
+#' ESmisc: A package for spanish related data functions.
 #'
-#' The spanish package provides two functions:
+#' The ESmisc package provides two important functions:
 #' to_number() and geocode_cadastral()
 #'
 #' @section to_number():
@@ -19,5 +19,5 @@
 #' to catastro. Please be warned.
 #'
 #' @docType package
-#' @name spanish
+#' @name ESmisc
 NULL

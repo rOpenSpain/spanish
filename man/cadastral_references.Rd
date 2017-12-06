@@ -30,6 +30,7 @@ separate(cadastral_references, new, into = c('longitude','latitude'), sep = "," 
 
 ## source is folder. A loop is needed to process each kml file ##
 
+\dontrun{
 files <- list.files("folder", full.names = T)
 
 for (f in files) {
@@ -39,6 +40,7 @@ for (f in files) {
 
 # separate lat/lon into columns if you prefer using tidyr
 d <- tidyr::separate(coords, into = c("longitude","latitude"), sep = "," )
+}
 }
 \references{
 Catastro. Ministerio de Hacienda y función pública.

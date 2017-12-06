@@ -16,7 +16,6 @@
 #' @source \href{http://www.catastro.meh.es/}{Sede Electrónica del Catastro}
 #'
 #' @examples
-#' \dontrun{
 #' ## source is cadastral reference number ##
 #'
 #' geocode_cadastral("0636105UF3403N", parse_files = FALSE)
@@ -32,6 +31,7 @@
 #'
 #' ## source is folder. A loop is needed to process each kml file ##
 #'
+#' \dontrun{
 #' files <- list.files("folder", full.names = T)
 #'
 #' for (f in files) {

@@ -12,12 +12,11 @@
 #'
 #'
 #' @examples
-#'  \dontrun{
 #' to_number("mil trescientos noventa y dos")
 #'
 #'
 #' ## testing provided dataframe: cantidades
 #'
 #' cantidades$var3 <- lapply(cantidades$var2, to_number)
-#' }
+#'
 "cantidades"
