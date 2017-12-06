@@ -1,7 +1,7 @@
 Package: spanish
 Type: Package
-Title: Misc Functions For Spanish Data
-Version: 0.2.0
+Title: Misc Functions for Spanish Data
+Version: 0.3.0
 Date: 2017-07-01
 Author: person( "Jose Manuel","Vera Oteo", email = "vera.josemanuel@gmail.com",
                 role = c("aut","cre")
@@ -9,16 +9,16 @@ URL: https://github.com/verajosemanuel
 BugReports: https://github.com/verajosemanuel/spanish/issues
 Maintainer: Jose M. Vera <vera.josemanuel@gmail.com>
 Depends: magrittr, xml2
-Description: Character vector to numerical translation in Euros from spanish
+Description: Character vector to numerical translation in Euros from Spanish
     spelled monetary quantities. Text must be previously cleaned & removed
     extraneous words, symbols or cents. Quantities MUST be written in a correct
     Spanish cause this isn't a grammar tool. Upper limit is up to the millions
     range.
     Geocoding from cadastral reference number. Source data must be a valid
-    cadastral reference or downloaded kml files from catastro website.
-    Be careful geocoding from catastro. You will be banned if many request
+    cadastral reference or downloaded KML files from Spanish Cadastral website.
+    Be careful geocoding many items. You will be banned if many request
     are issued in a short period of time. geocode_cadastral() waits 2 seconds
-    between requests.
+    between requests to avoid this issue.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
