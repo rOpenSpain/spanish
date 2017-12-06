@@ -22,6 +22,7 @@ Get longitude/latitude from valid cadastral ref. or kml files from catastro.
 }
 
 \examples{
+\dontrun{
 ## source is cadastral reference number ##
 
 geocode_cadastral("0636105UF3403N", parse_files = FALSE)
@@ -39,7 +40,6 @@ separate(cadastral_references, new, into = c('longitude','latitude'), sep = "," 
 
 ## source is folder. A loop is needed to process each kml file ##
 
-\dontrun{
 files <- list.files("folder", full.names = T)
 
 for (f in files) {

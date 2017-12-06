@@ -28,6 +28,5 @@ Collate:
     'cadastral_references-data.R'
     'cantidades-data.R'
     'spanish.R'
-    'zzz.R'
 RoxygenNote: 6.0.1.9000
 Suggests: testthat, tidyr
