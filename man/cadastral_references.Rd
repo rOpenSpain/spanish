@@ -15,7 +15,6 @@ data(cadastral_references)
 Randomly selected data from catastro to test geocode_cadastral function
 }
 \examples{
-\dontrun{
 ## source is cadastral reference number ##
 
 geocode_cadastral("0636105UF3403N", parse_files = FALSE)
@@ -40,7 +39,6 @@ for (f in files) {
 
 # separate lat/lon into columns if you prefer using tidyr
 d <- tidyr::separate(coords, into = c("longitude","latitude"), sep = "," )
-}
 }
 \references{
 Catastro. Ministerio de Hacienda y función pública.

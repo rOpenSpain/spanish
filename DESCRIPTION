@@ -5,7 +5,7 @@ Version: 0.3.0
 Date: 2017-07-01
 Author: person( "Jose Manuel","Vera Oteo", email = "vera.josemanuel@gmail.com",
                 role = c("aut","cre")
-URL: https://github.com/verajosemanuel
+URL: https://github.com/verajosemanuel/spanish
 BugReports: https://github.com/verajosemanuel/spanish/issues
 Maintainer: Jose M. Vera <vera.josemanuel@gmail.com>
 Depends: magrittr, xml2
@@ -15,7 +15,7 @@ Description: Character vector to numerical translation in Euros from Spanish
     Spanish cause this isn't a grammar tool. Upper limit is up to the millions
     range.
     Geocoding from cadastral reference number. Source data must be a valid
-    cadastral reference or downloaded KML files from Spanish Cadastral website.
+    cadastral reference or downloaded KML files from Spanish cadastral website.
     Be careful geocoding many items. You will be banned if many request
     are issued in a short period of time. geocode_cadastral() waits 2 seconds
     between requests to avoid this issue.
