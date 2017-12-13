@@ -1,4 +1,4 @@
 library(testthat)
-library(ESmisc)
+library(spanish)
 
-test_check("ESmisc")
+test_check("spanish")

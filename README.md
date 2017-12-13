@@ -1,10 +1,12 @@
-# ESmisc: R package for functions on spanish data [![Build Status](https://travis-ci.org/verajosemanuel/ESmisc.svg?branch=master)](https://travis-ci.org/verajosemanuel/ESmisc)
+
+
+# spanish: R package for functions on spanish data [![Build Status](https://travis-ci.org/verajosemanuel/spanish.svg?branch=master)](https://travis-ci.org/verajosemanuel/spanish)
 <img src="tools/readme/logo.png" align="right" />
 
 ### Installation: ###
 
  ```
-devtools::install_github("verajosemanuel/ESmisc")
+devtools::install_github("verajosemanuel/spanish")
 ```
 
 There's some special data in spain that's not addressed by any R package or function.
@@ -92,20 +94,16 @@ separate lat/lon into columns the same as before
 ```
 
  df <- tidyr::separate(coords, into = c("longitude","latitude"), sep = "," )
- 
+
 ```
 
 
-### Requirements: 
+### Requirements:
 - magrittr must be installed.
-- to_number() needs clean text. So it must be previously cleaned & removed extraneous words, symbols or cents. 
+- to_number() needs clean text. So it must be previously cleaned & removed extraneous words, symbols or cents.
 - Quantities MUST be written in a correct Spanish (this is not a grammar tool).
-- The upper limit is up to the millions range. 
-- geocode_cadastral() requests to catastro website. 
+- The upper limit is up to the millions range.
+- geocode_cadastral() requests to catastro website.
 
 # BE WARNED: You'll be banned if many requests to catastro are made in short time. #
 - Because of that geocode_cadastral() waits two seconds between requests.
-
-
-
-

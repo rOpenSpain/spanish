@@ -2,7 +2,7 @@ context("requests")
 
 test_that("geocode_cadastral returns coordinates from cadastral reference.", {
   result <- geocode_cadastral("0636105UF3403N", parse_files = FALSE)
-  
+
   expect_match(result, "[0-9]{1,2}.[0-9]*,[0-9]{1,2}.[0-9]*")
 })
 
