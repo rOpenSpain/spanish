@@ -27,6 +27,6 @@ Collate:
     'to_number.R'
     'cadastral_references-data.R'
     'cantidades-data.R'
-    'ESmisc.R'
+    'spanish.R'
 RoxygenNote: 6.0.1.9000
 Suggests: testthat, tidyr
