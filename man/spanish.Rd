@@ -27,5 +27,5 @@ Get longitude/latitude from valid cadastral ref. or kml files from catastro.
 
 \section{Warning}{
  You may be banned if many requests in short time are made
-to catastro. Please be warned.
+to cadastral website. Please be warned.
 }
