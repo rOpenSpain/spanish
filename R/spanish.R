@@ -11,13 +11,6 @@
 #' The upper limit is up to the millions range. Cents must be removed.
 #' (in my TODO list to parse cents part)
 #'
-#' @section geocode_cadastral():
-#' Geocode by longitude and latitude from cadastral references.
-#' Get longitude/latitude from valid cadastral ref. or kml files from catastro.
-#'
-#' @section Warning: You may be banned if many requests in short time are made
-#' to catastro. Please be warned.
-#'
 #' @docType package
 #' @name spanish
 NULL

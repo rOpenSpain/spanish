@@ -34,68 +34,6 @@ head(cantidades[ , c("var2","var3")])
 6                                                    dosmil cuarenta    2040
 ```
 
-### geocode_cadastral() ###
-**geocode_cadastral** obtains longitude/latitude from valid cadastral references or kml files from catastro.
-
-```
-geocode_cadastral("0636105UF3403N", parse_files = FALSE)
-
-[1] "36.5209422288168,-4.89298751473745"
-
-```
-
-Use lapply to geocode cadastral references from dataframe columns.
-
-```
-cadastral_references$new <- lapply(cadastral_references$cadref1, geocode_cadastral)
-
-cadastral_references
-         cadref1        cadref2                                new
-1 2614501VK6621S 1449804NH1014N -3.44129716598736,40.3007548071216
-2 2715807VK6621S 3880109CD6038S -3.44034755388475,40.3008975152619
-3 2744702DF3824D 9501722DD6890B  2.19479121426678,41.4065056978248
-4 0944328DF3804D 1617647TF8611F  2.17206636096108,41.4071068008502
-5 8742806DF2884B 7893306CS7479S  2.14651391794721,41.4046077850113
-6 9314903NH3591C 9701703XG8890B -8.51948430067999,42.9131469314961
-```
-
-separate generated geocode "new" into columns (lon/lat) usign tidyr
-
-```
-library(tidyr)
-
-separate(cadastral_references, new, into = c('longitude','latitude'), sep = "," )
-
-         cadref1        cadref2         longitude         latitude
-1 2614501VK6621S 1449804NH1014N -3.44129716598736 40.3007548071216
-2 2715807VK6621S 3880109CD6038S -3.44034755388475 40.3008975152619
-3 2744702DF3824D 9501722DD6890B  2.19479121426678 41.4065056978248
-4 0944328DF3804D 1617647TF8611F  2.17206636096108 41.4071068008502
-5 8742806DF2884B 7893306CS7479S  2.14651391794721 41.4046077850113
-6 9314903NH3591C 9701703XG8890B -8.51948430067999 42.9131469314961
-
-```
-
-When folder is source. We may process each kml the same way as remote URL.
-
-```
-
- files <- list.files("folder", full.names = T)
-
- for (f in files) {
-  coords <- geocode_cadastral(f, parse_files = TRUE)
-  df <- as.data.frame(rbind(df , as.data.frame(coords, stringsAsFactors = F )))
- }
-
-```
-
-separate lat/lon into columns the same as before
-
-```
-
- df <- tidyr::separate(coords, into = c("longitude","latitude"), sep = "," )
-
-```
 
 
 ### Requirements:
@@ -103,7 +41,3 @@ separate lat/lon into columns the same as before
 - to_number() needs clean text. So it must be previously cleaned & removed extraneous words, symbols or cents.
 - Quantities MUST be written in a correct Spanish (this is not a grammar tool).
 - The upper limit is up to the millions range.
-- geocode_cadastral() requests to catastro website.
-
-# BE WARNED: You'll be banned if many requests to catastro are made in short time. #
-- Because of that geocode_cadastral() waits two seconds between requests.

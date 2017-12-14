@@ -2,5 +2,4 @@
 
 import(magrittr)
 import(xml2)
-export(geocode_cadastral)
 export(to_number)

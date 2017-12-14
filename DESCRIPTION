@@ -1,31 +1,24 @@
 Package: spanish
 Type: Package
-Title: Misc Functions for Spanish Data
-Version: 0.2.0
-Date: 2017-07-01
-Author: person( "Jose Manuel","Vera Oteo", email = "vera.josemanuel@gmail.com",
-                role = c("aut","cre")
+Title: Translate Quantities from Strings Spelled in Spanish to Integer
+Version: 0.3.0
+Date: 2017-12-14
+Authors@R: person( "Jose Manuel","Vera Oteo", email = "vera.josemanuel@gmail.com",
+                role = c("aut","cre"))
 URL: https://github.com/verajosemanuel
 BugReports: https://github.com/verajosemanuel/spanish/issues
 Maintainer: Jose M. Vera <vera.josemanuel@gmail.com>
 Depends: magrittr, xml2
-Description: Character vector to numerical translation in Euros from spanish
+Description: Character vector to numerical translation in Euros from Spanish
     spelled monetary quantities. Text must be previously cleaned & removed
     extraneous words, symbols or cents. Quantities MUST be written in a correct
     Spanish cause this isn't a grammar tool. Upper limit is up to the millions
-    range.
-    Geocoding from cadastral reference number. Source data must be a valid
-    cadastral reference or downloaded KML files from cadastral website.
-    Be careful geocoding. You will be banned if many request
-    are issued in a short period of time. geocode_cadastral() waits 2 seconds
-    between requests.
+    range. 
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
 Collate:
-    'geocode_cadastral.R'
     'to_number.R'
-    'cadastral_references-data.R'
     'cantidades-data.R'
     'spanish.R'
 RoxygenNote: 6.0.1.9000
