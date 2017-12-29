@@ -7,13 +7,12 @@ Authors@R: person( "Jose Manuel","Vera Oteo", email = "vera.josemanuel@gmail.com
                 role = c("aut","cre"))
 URL: https://github.com/verajosemanuel
 BugReports: https://github.com/verajosemanuel/spanish/issues
-Maintainer: Jose M. Vera <vera.josemanuel@gmail.com>
 Depends: magrittr, xml2
 Description: Character vector to numerical translation in Euros from Spanish
     spelled monetary quantities. Text must be previously cleaned & removed
     extraneous words, symbols or cents. Quantities MUST be written in a correct
     Spanish cause this isn't a grammar tool. Upper limit is up to the millions
-    range. 
+    range.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
