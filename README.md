@@ -3,14 +3,22 @@
 # spanish: R package for functions on spanish data [![Build Status](https://travis-ci.org/verajosemanuel/spanish.svg?branch=master)](https://travis-ci.org/verajosemanuel/spanish)  [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/spanish)](http://cran.r-project.org/package=spanish)
 <img src="tools/readme/logo.png" align="right" />
 
-### Installation: ###
-
- ```
-devtools::install_github("verajosemanuel/spanish")
-```
-
 There's some special data in spain that's not addressed by any R package or function.
 This package is my humble (and objectionable) attempt of helping programmers working with this kind of data.
+
+### Installation: ###
+
+*spanish* is available on CRAN:
+
+```
+install.package("spanish")
+```
+
+Development version:
+
+```
+devtools::install_github("verajosemanuel/spanish")
+```
 
 ### to_number() ###
 **to_number()** is a quick & dirty function to translate spanish spelled monetary quantities into their numerical counterparts.
