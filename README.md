@@ -1,6 +1,7 @@
 
 
-# spanish: R package for functions on spanish data [![Build Status](https://travis-ci.org/verajosemanuel/spanish.svg?branch=master)](https://travis-ci.org/verajosemanuel/spanish)  [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/spanish)](http://cran.r-project.org/package=spanish) [![lifecycle](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable) [![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/spanish)](http://cran.r-project.org/web/packages/spanish/index.html)
+# spanish: R package for functions on spanish data [![Build Status](https://travis-ci.org/verajosemanuel/spanish.svg?branch=master)](https://travis-ci.org/verajosemanuel/spanish)  [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/spanish)](http://cran.r-project.org/package=spanish) [![lifecycle](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable) [![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/spanish)](http://cran.r-project.org/web/packages/spanish/index.html) [![Rdoc](http://www.rdocumentation.org/badges/version/spanish)](http://www.rdocumentation.org/packages/spanish)
+
 <img src="tools/readme/logo.png" align="right" />
 
 There's some special data in spain that's not addressed by any R package or function.
