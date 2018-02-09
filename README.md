@@ -49,3 +49,10 @@ head(cantidades[ , c("var2","var3")])
 - to_number() needs clean text. So it must be previously cleaned & removed extraneous words, symbols or cents.
 - Quantities MUST be written in a correct Spanish (this is not a grammar tool).
 - The upper limit is up to the millions range.
+
+### TO DO
+
+- Try to clean text prior to conversion automagically
+- Include decimals (cents) into conversion
+- Add CAdastral Geolocation function
+
