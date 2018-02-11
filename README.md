@@ -55,5 +55,6 @@ head(cantidades[ , c("var2","var3")])
 
 - Try to clean text prior to conversion automagically
 - Include decimals (cents) into conversion
-- Add CAdastral Geolocation function
+- reverse conversion (from numbers to chars)
+- Add Cadastral Geolocation function
 
