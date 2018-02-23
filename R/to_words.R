@@ -5,7 +5,8 @@ to_words <- function(x) {
          call. = FALSE)
   }
 
-  if (as.numeric(x) > 999999999) stop(paste(x, "es demasiado grande!"))
+  if (as.numeric(abs(x)) > 999999999) stop(paste(x, "¡es demasiado grande!"))
+
 
 
 units <- c("", "uno", "dos", "tres", "cuatro", "cinco", "seis", "siete",
@@ -28,7 +29,7 @@ names(hundred) <- 1:9
 
 
 
-x <- as.integer(as.numeric(x))
+x <- as.integer(abs(as.numeric(x)))
 len <- nchar(x)
 digits <- rev(strsplit(as.character(x), "")[[1]])
 
@@ -42,7 +43,10 @@ clean <- function(x) {
   x <- gsub("veinte y ", "veinti", x )
   x <- gsub("veinti$", "veinte", x, perl = TRUE )
   x <- gsub("veinte y $", "veinte", x, perl = TRUE )
-  x <- gsub(" NA ", " ", x)
+  x <- gsub("/?NA ", " ", x, perl = TRUE)
+  x <- gsub("^ ", "", x, perl = TRUE)
+  x <- gsub(" y $", "", x, perl = TRUE)
+
 
   return(x)
 
@@ -76,8 +80,6 @@ get_number <- function(x) {
       }
 
 
-
-
       return(clean(x))
 
 }
@@ -96,12 +98,12 @@ if (len < 5) {
 } else if (len == 9) {
   x <- paste0(get_number(substr(x,1,3)), " millones ", get_number(substr(x,4,6)),"mil ",get_number(substr(x,7,9)))
 } else {
-  stop(paste(x, "muy grande!"))
+  stop(paste(x, "¡muy grande!"))
 }
 
 
-
-    return(clean(x))
+return(clean(x))
 
 }
+
 
