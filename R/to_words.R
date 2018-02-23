@@ -1,3 +1,20 @@
+#' Express integer numbers in spanish spelled quantities.
+#'
+#' Allows you to translate to words numerical quantities in integer.
+#' Floating point numbers will lose every number after the decimal separator.
+#' Quantities MUST be non negative because negative numbers will be converted to positive
+#' The upper limit is up to the millions range.
+#'
+#' @keywords money, currency, euros
+#' @export
+#' @param x A number between 0 and 999999999.
+#' @examples
+#' to_words(3245235)
+#'
+
+utils::globalVariables(".")
+
+
 to_words <- function(x) {
 
   if (!requireNamespace("magrittr", quietly = TRUE)) {
