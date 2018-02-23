@@ -7,7 +7,7 @@
 \title{spanish: A package for spanish related data functions.}
 \description{
 The spanish package provides two important functions:
-to_number() and geocode_cadastral()
+to_number() and to_words()
 }
 \section{to_number()}{
 
@@ -18,14 +18,11 @@ Quantities MUST be written in a correct Spanish (this is not a grammar tool)
 The upper limit is up to the millions range. Cents must be removed.
 (in my TODO list to parse cents part)
 }
+\section{to_words()}{
 
-\section{geocode_cadastral()}{
-
-Geocode by longitude and latitude from cadastral references.
-Get longitude/latitude from valid cadastral ref. or kml files from catastro.
+Allows you to translate to words numerical quantities in integer.
+Floating point numbers will lose every number after the decimal separator.
+Quantities MUST be non negative because negative numbers will be converted to positive
+The upper limit is up to the millions range.
 }
 
-\section{Warning}{
- You may be banned if many requests in short time are made
-to cadastral website. Please be warned.
-}
