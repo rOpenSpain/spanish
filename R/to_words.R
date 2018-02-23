@@ -5,10 +5,6 @@ to_words <- function(x) {
          call. = FALSE)
   }
 
-  x <- round(x)
-  len <- nchar(x)
-  digits <- rev(strsplit(as.character(x), "")[[1]])
-
 
 units <- c("", "uno", "dos", "tres", "cuatro", "cinco", "seis", "siete",
            "ocho", "nueve")
@@ -30,18 +26,46 @@ hundred <- c("ciento", "doscientos", "trescientos", "cuatrocientos", "quinientos
 names(hundred) <- 1:9
 
 
-if (len == 1) x <- as.vector(units[digits])
 
-if (len == 2)
-    if (x <= 19) x <- as.vector(dozens[digits[1]]) else x <- as.vector(paste0(tens[digits[2]]," y ", units[digits[1]]))
+x <- as.integer(as.numeric(x))
+len <- nchar(x)
+digits <- rev(strsplit(as.character(x), "")[[1]])
 
-if (len == 3) x <- as.vector(paste0(hundred[digits[3]]," ", if (as.numeric(paste0(digits[2],digits[3])) <= 19) as.vector(dozens[digits[1]]) else as.vector(paste0(tens[digits[2]]," y ", units[digits[1]]))))
 
-x <- gsub("unociento", "ciento ", x )
-x <- gsub("veinte y ", "veinti", x )
-x <- gsub("veinti$", "veinte", x, perl = TRUE )
-x <- gsub("veinte y $", "veinte", x, perl = TRUE )
 
-return(x)
+get_number <- function(x) {
+
+      len <- nchar(x)
+      digits <- rev(strsplit(as.character(x), "")[[1]])
+
+      if (len == 1) x <- as.vector(units[digits])
+
+      if (len == 2)
+        if (x <= 19) x <- as.vector(dozens[digits[1]]) else x <- as.vector(paste0(tens[digits[2]]," y ", units[digits[1]]))
+
+      if (len == 3) x <- as.vector(paste0(hundred[digits[3]]," ", if (as.numeric(paste0(digits[2],digits[3])) <= 19) as.vector(dozens[digits[1]]) else as.vector(paste0(tens[digits[2]]," y ", units[digits[1]]))))
+
+      if (len == 4) x <- as.vector(paste0(units[digits[4]],"mil ",hundred[digits[3]]," ", if (as.numeric(paste0(digits[2],digits[3])) <= 19) as.vector(dozens[digits[1]]) else as.vector(paste0(tens[digits[2]]," y ", units[digits[1]]))))
+
+      x <- gsub("unomil", "mil", x )
+      x <- gsub("unociento", "ciento ", x )
+      x <- gsub("veinte y ", "veinti", x )
+      x <- gsub("veinti$", "veinte", x, perl = TRUE )
+      x <- gsub("veinte y $", "veinte", x, perl = TRUE )
+      x <- gsub(" NA ", " ", x)
+
+
+      return(x)
 
 }
+
+
+if (len < 5) get_number(x)
+  else if (len == 5) paste0(get_number(substr(x,1,2)),"mil ",get_number(substr(x,3,5)))
+  else if (len == 6) paste0(get_number(substr(x,1,3)),"mil ",get_number(substr(x,4,6)))
+  else if (len == 7) paste0(get_number(substr(x,1,1)), " millones ", get_number(substr(x,2,4)),"mil ",get_number(substr(x,5,7)))
+  else if (len == 8) paste0(get_number(substr(x,1,2)), " millones ", get_number(substr(x,3,5)),"mil ",get_number(substr(x,6,8)))
+  else if (len == 9) paste0(get_number(substr(x,1,3)), " millones ", get_number(substr(x,4,6)),"mil ",get_number(substr(x,7,9)))
+
+}
+
