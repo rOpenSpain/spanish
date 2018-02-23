@@ -5,6 +5,8 @@ to_words <- function(x) {
          call. = FALSE)
   }
 
+  if (as.numeric(x) > 999999999) stop(paste(x, "es demasiado grande!"))
+
 
 units <- c("", "uno", "dos", "tres", "cuatro", "cinco", "seis", "siete",
            "ocho", "nueve")
@@ -60,12 +62,23 @@ get_number <- function(x) {
 }
 
 
-if (len < 5) get_number(x)
-  else if (len == 5) paste0(get_number(substr(x,1,2)),"mil ",get_number(substr(x,3,5)))
-  else if (len == 6) paste0(get_number(substr(x,1,3)),"mil ",get_number(substr(x,4,6)))
-  else if (len == 7) paste0(get_number(substr(x,1,1)), " millones ", get_number(substr(x,2,4)),"mil ",get_number(substr(x,5,7)))
-  else if (len == 8) paste0(get_number(substr(x,1,2)), " millones ", get_number(substr(x,3,5)),"mil ",get_number(substr(x,6,8)))
-  else if (len == 9) paste0(get_number(substr(x,1,3)), " millones ", get_number(substr(x,4,6)),"mil ",get_number(substr(x,7,9)))
+if (len < 5) {
+  get_number(x)
+} else if (len == 5) {
+  paste0(get_number(substr(x,1,2)),"mil ",get_number(substr(x,3,5)))
+} else if (len == 6) {
+  paste0(get_number(substr(x,1,3)),"mil ",get_number(substr(x,4,6)))
+} else if (len == 7) {
+  paste0(get_number(substr(x,1,1)), " millones ", get_number(substr(x,2,4)),"mil ",get_number(substr(x,5,7)))
+} else if (len == 8) {
+  paste0(get_number(substr(x,1,2)), " millones ", get_number(substr(x,3,5)),"mil ",get_number(substr(x,6,8)))
+} else if (len == 9) {
+  paste0(get_number(substr(x,1,3)), " millones ", get_number(substr(x,4,6)),"mil ",get_number(substr(x,7,9)))
+} else {
+  stop(paste(x, "muy grande!"))
+}
+
+
 
 }
 
