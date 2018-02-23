@@ -45,18 +45,39 @@ head(cantidades[ , c("var2","var3")])
 6                                                    dosmil cuarenta    2040
 ```
 
+### to_words() ###
+**to_words()** is a quick & dirty (optimization pending) function to translate integers to spanish spelled monetary quantities.
+Given a numerical quantity **to_words** translates it to spanish. 
 
+```
+to_words(3245235)
+[1] "tres millones doscientos cuarenta y cincomil doscientos treinta y cinco"
+```
+This function can be used on dataframes with apply. Try random numbers.
+```
+a <- rnorm(n = 12,mean = 1000000,sd = 6000000)
+a <- abs(a)  # non negative
+
+> sapply(a, to_words)
+ [1] "un millón setecientos ochenta y cuatromil quinientos diez"                 "cuatro millones setecientos sesenta y seismil novecientos noventa y nueve"
+ [3] "cinco millones setecientos mil setecientos once"                           "cinco millones trescientos noventa y ochomil setecientos treinta y cuatro"
+ [5] "setecientos sesenta y mil cuatrocientos  y cinco"                          "doscientos ochenta y seismil setecientos "                                
+ [7] "un millón novecientos sesenta y sietemil cincuenta y tres"                 "ciento noventa y seismil novecientos treinta y seis"                      
+ [9] "siete millones doscientos ochenta y ochomil cuatrocientos ochenta y cinco" "dos millones ciento  y sietemil quinientos cincuenta y siete"             
+[11] "seis millones ochocientos ochenta y ochomil doscientos  y uno"             "seis millones sesentamil novecientos cuarenta y siete"                    
+```
 
 ### Requirements:
 - magrittr must be installed.
 - to_number() needs clean text. So it must be previously cleaned & removed extraneous words, symbols or cents.
-- Quantities MUST be written in a correct Spanish (this is not a grammar tool).
-- The upper limit is up to the millions range.
+- to_number() quantities MUST be written in a correct Spanish (this is not a grammar tool).
+- to_words() does not keep sign. If negative numbers are provided, their positive is used for conversion.
+- The upper limit is up to the millions range in both cases.
 
 ### TO DO
 
-- Try to clean text prior to conversion automagically
-- Include decimals (cents) into conversion
-- reverse conversion (from numbers to chars)
+- Try to clean text prior to be used by to_number()
+- Include decimals (cents) in to_number() function
+- Force to_words() keep sign
 - Add Cadastral Geolocation function
 

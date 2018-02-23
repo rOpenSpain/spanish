@@ -71,7 +71,7 @@ get_number <- function(x) {
 
       } else if (len == 3) {
 
-        x <- as.vector(paste0(hundred[digits[3]]," ", if ((as.numeric(paste0(digits[2],digits[1])) <= 19) && digits[2]!=0 ) as.vector(dozens[digits[1]]) else as.vector(paste0(tens[digits[2]]," y ", units[digits[1]]))))
+        x <- as.vector(paste0(hundred[digits[3]]," ", if ((as.numeric(paste0(digits[2],digits[1])) <= 19) && digits[2] != 0 ) as.vector(dozens[digits[1]]) else as.vector(paste0(tens[digits[2]]," y ", units[digits[1]]))))
 
       } else if (len == 4) {
 
