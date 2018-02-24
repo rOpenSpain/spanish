@@ -3,4 +3,3 @@
 import(magrittr)
 import(xml2)
 export(to_number)
-export(to_words)
