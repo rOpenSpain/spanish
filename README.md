@@ -1,4 +1,5 @@
 # spanish: R package for functions on spanish data [![Build Status](https://travis-ci.org/rOpenSpain/spanish.svg?branch=master)](https://travis-ci.org/rOpenSpain/spanish)  [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/spanish)](http://cran.r-project.org/package=spanish) [![lifecycle](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable) [![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/spanish)](http://cran.r-project.org/web/packages/spanish/index.html) [![Rdoc](http://www.rdocumentation.org/badges/version/spanish)](http://www.rdocumentation.org/packages/spanish)
+|Blog|[![](https://img.shields.io/badge/blog-spanish-orange.svg?colorB=E91E63)](https://jvera.rbind.io)
 
 ![spanish logo](man/figures/logo.png)
 
