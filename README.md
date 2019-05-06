@@ -7,6 +7,8 @@
 There are some special data in spain that is not addressed by any R package or function. Mainly on data processing and NLP.
 This package is my humble (and objectionable) attempt of helping programmers working with this kind of data creating some functions for it.
 
+Documentation here: [https://ropenspain.github.io/spanish/](https://ropenspain.github.io/spanish/)
+
 ### Installation: ###
 
 *spanish* is available on CRAN:
