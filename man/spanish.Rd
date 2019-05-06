@@ -7,7 +7,7 @@
 \title{spanish: A package for spanish related data functions.}
 \description{
 The spanish package provides two important functions:
-to_number() and to_words()
+to_number() and geocode_cadastral()
 }
 \section{to_number()}{
 
@@ -17,12 +17,5 @@ Text must be previously cleaned & removed extraneous words or symbols.
 Quantities MUST be written in a correct Spanish (this is not a grammar tool)
 The upper limit is up to the millions range. Cents must be removed.
 (in my TODO list to parse cents part)
-}
-\section{to_words()}{
-
-Allows you to translate to words numerical quantities in integer.
-Floating point numbers will lose every number after the decimal separator.
-Quantities MUST be non negative because negative numbers will be converted to positive
-The upper limit is up to the millions range.
 }
 

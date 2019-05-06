@@ -22,5 +22,5 @@ Collate:
     'to_number.R'
     'cantidades-data.R'
     'spanish.R'
-RoxygenNote: 6.0.1.9000
+RoxygenNote: 6.1.1
 Suggests: testthat, tidyr
