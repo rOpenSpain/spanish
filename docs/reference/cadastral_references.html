@@ -129,28 +129,22 @@
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'>## source is cadastral reference number ##</span>
+    <pre class="examples"><span class='co'># NOT RUN {</span>
+<span class='co'>## source is cadastral reference number ##</span>
 
-<span class='fu'><a href='geocode_cadastral.html'>geocode_cadastral</a></span>(<span class='st'>"0636105UF3403N"</span>, <span class='kw'>parse_files</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; [1] "-4.89298801318968,36.5209327812963"</div><div class='input'>
+ <span class='fu'><a href='geocode_cadastral.html'>geocode_cadastral</a></span>(<span class='st'>"0636105UF3403N"</span>, <span class='kw'>parse_files</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
+
 <span class='co'>## Use lapply to geocode cadastral references from dataframe columns.</span>
 
-<span class='no'>cadastral_references</span>$<span class='no'>new</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/lapply'>lapply</a></span>(<span class='no'>cadastral_references</span>$<span class='no'>cadref1</span>, <span class='no'>geocode_cadastral</span>)
+ <span class='no'>cadastral_references</span>$<span class='no'>new</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/lapply'>lapply</a></span>(<span class='no'>cadastral_references</span>$<span class='no'>cadref1</span>, <span class='no'>geocode_cadastral</span>)
 
 <span class='co'>## separate previously generated "new" data into columns usign tidyr</span>
 
-<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/library'>library</a></span>(<span class='no'>tidyr</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: package 'tidyr' was built under R version 3.5.2</span></div><div class='output co'>#&gt; <span class='message'></span>
-#&gt; <span class='message'>Attaching package: 'tidyr'</span></div><div class='output co'>#&gt; <span class='message'>The following object is masked from 'package:magrittr':</span>
-#&gt; <span class='message'></span>
-#&gt; <span class='message'>    extract</span></div><div class='input'><span class='fu'><a href='https://tidyr.tidyverse.org/reference/separate.html'>separate</a></span>(<span class='no'>cadastral_references</span>, <span class='no'>new</span>, <span class='kw'>into</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>'longitude'</span>,<span class='st'>'latitude'</span>), <span class='kw'>sep</span> <span class='kw'>=</span> <span class='st'>","</span> )</div><div class='output co'>#&gt;          cadref1        cadref2         longitude         latitude
-#&gt; 1 2614501VK6621S 1449804NH1014N -3.44129716598736 40.3007548071216
-#&gt; 2 2715807VK6621S 3880109CD6038S -3.44034755388475 40.3008975152619
-#&gt; 3 2744702DF3824D 9501722DD6890B  2.19479121426678 41.4065056978248
-#&gt; 4 0944328DF3804D 1617647TF8611F  2.17206636096108 41.4071068008502
-#&gt; 5 8742806DF2884B 7893306CS7479S  2.14651391794721 41.4046077850113
-#&gt; 6 9314903NH3591C 9701703XG8890B -8.51948430067999 42.9131469314961</div><div class='input'>
-## source is folder. A loop is needed to process each kml file ##
+<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/library'>library</a></span>(<span class='no'>tidyr</span>)
+<span class='fu'><a href='https://tidyr.tidyverse.org/reference/separate.html'>separate</a></span>(<span class='no'>cadastral_references</span>, <span class='no'>new</span>, <span class='kw'>into</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>'longitude'</span>,<span class='st'>'latitude'</span>), <span class='kw'>sep</span> <span class='kw'>=</span> <span class='st'>","</span> )
 
-</div><span class='co'># NOT RUN {</span>
+<span class='co'>## source is folder. A loop is needed to process each kml file ##</span>
+
 <span class='no'>files</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/list.files'>list.files</a></span>(<span class='st'>"folder"</span>, <span class='kw'>full.names</span> <span class='kw'>=</span> <span class='no'>T</span>)
 
 <span class='kw'>for</span> (<span class='no'>f</span> <span class='kw'>in</span> <span class='no'>files</span>) {
