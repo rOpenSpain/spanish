@@ -1,11 +1,11 @@
 Package: spanish
 Type: Package
 Title: Translate Quantities from Strings Spelled in Spanish to Integer
-Version: 0.3.1
+Version: 0.4
 Date: 2017-12-14
 Authors@R: person( "Jose Manuel","Vera Oteo", email = "vera.josemanuel@gmail.com",
                 role = c("aut","cre"))
-URL: https://github.com/verajosemanuel
+URL: https://ropenspain.github.io/spanish/
 BugReports: https://github.com/verajosemanuel/spanish/issues
 Imports: magrittr, xml2
 Description: Character vector to numerical translation in Euros from Spanish
