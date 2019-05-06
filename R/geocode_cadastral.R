@@ -10,7 +10,7 @@
 #' @examples
 #' ## source is cadastral reference number ##
 #' \dontrun{
-#' # geocode_cadastral("0636105UF3403N", parse_files = FALSE)
+#' ## geocode_cadastral("0636105UF3403N", parse_files = FALSE)
 #'
 #' ##"36.5209422288168,-4.89298751473745"
 #'
@@ -35,6 +35,7 @@
 #'# separate lat/lon into columns if you prefer using tidyr
 #' # d <- tidyr::separate(coords, into = c("longitude","latitude"), sep = "," )
 #'}
+#' @name geocode_cadastral
 #' @export
 
 

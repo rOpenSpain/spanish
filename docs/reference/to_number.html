@@ -118,7 +118,6 @@ The upper limit is up to the millions range. Cents must be removed.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>to_number</span>(<span class='no'>x</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -131,12 +130,15 @@ The upper limit is up to the millions range. Cents must be removed.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>to_number</span>(<span class='st'>"mil trescientos noventa y dos"</span>)</div><div class='output co'>#&gt; <span class='error'>Error in to_number("mil trescientos noventa y dos"): no se pudo encontrar la función "to_number"</span></div><div class='input'>
-<span class='fl'>1392</span></div><div class='output co'>#&gt; [1] 1392</div><div class='input'>
-<span class='co'>## Example dataframe is provided: cantidades</span>
+    <pre class="examples"><div class='input'>to_number("mil trescientos noventa y dos")
 
-<span class='no'>cantidades</span>$<span class='no'>var3</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/lapply'>lapply</a></span>(<span class='no'>cantidades</span>$<span class='no'>var2</span>, <span class='no'>to_number</span>)</div><div class='output co'>#&gt; <span class='error'>Error in match.fun(FUN): objeto 'to_number' no encontrado</span></div><div class='input'>
-</div></pre>
+Example table is provided: cantidades
+cantidades$var3 <- lapply(cantidades$var2, to_number)
+
+</div><div class='output co'>#&gt; <span class='error'>Error: &lt;text&gt;:3:9: unexpected symbol</span>
+#&gt; <span class='error'>2: </span>
+#&gt; <span class='error'>3: Example table</span>
+#&gt; <span class='error'>           ^</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

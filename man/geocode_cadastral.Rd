@@ -3,9 +3,6 @@
 \name{geocode_cadastral}
 \alias{geocode_cadastral}
 \title{geocode by longitude and latitude from cadastral references.}
-\usage{
-geocode_cadastral(x, parse_files)
-}
 \arguments{
 \item{x}{A valid spanish cadastral reference.}
 
@@ -24,7 +21,7 @@ Get longitude/latitude from valid cadastral ref. or kml files from catastro.
 \examples{
 ## source is cadastral reference number ##
 \dontrun{
-# geocode_cadastral("0636105UF3403N", parse_files = FALSE)
+## geocode_cadastral("0636105UF3403N", parse_files = FALSE)
 
 ##"36.5209422288168,-4.89298751473745"
 

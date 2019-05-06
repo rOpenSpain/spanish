@@ -11,10 +11,10 @@
 #' The upper limit is up to the millions range. Cents must be removed.
 #' (in my TODO list to parse cents part)
 #'
-#' #' @section to_words():
+#' @section to_words():
 #' Translate to spanish spelled quantities from integers
 #'
-#' #' @section geocode_cadastral():
+#' @section geocode_cadastral():
 #' geocode by longitude and latitude from cadastral references.
 #' Get longitude/latitude from valid cadastral ref. or kml files from catastro.
 #'

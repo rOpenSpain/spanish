@@ -112,7 +112,6 @@
     
     </div>
 
-    <pre class="usage"><span class='fu'>geocode_cadastral</span>(<span class='no'>x</span>, <span class='no'>parse_files</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -137,29 +136,32 @@
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'>## source is cadastral reference number ##</span>
+    <pre class="examples"><div class='input'>## source is cadastral reference number ##
+</div><span class='co'># NOT RUN {</span>
+<span class='co'>## geocode_cadastral("0636105UF3403N", parse_files = FALSE)</span>
 
-<span class='fu'>geocode_cadastral</span>(<span class='st'>"0636105UF3403N"</span>, <span class='kw'>parse_files</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; <span class='error'>Error in geocode_cadastral("0636105UF3403N", parse_files = FALSE): no se pudo encontrar la función "geocode_cadastral"</span></div><div class='input'>
- <span class='st'>"36.5209422288168,-4.89298751473745"</span></div><div class='output co'>#&gt; [1] "36.5209422288168,-4.89298751473745"</div><div class='input'>
+<span class='co'>##"36.5209422288168,-4.89298751473745"</span>
+
 <span class='co'>## Use lapply to geocode cadastral references from dataframe columns.</span>
 
-<span class='no'>cadastral_references</span>$<span class='no'>new</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/lapply'>lapply</a></span>(<span class='no'>cadastral_references</span>$<span class='no'>cadref1</span>, <span class='no'>geocode_cadastral</span>)</div><div class='output co'>#&gt; <span class='error'>Error in match.fun(FUN): objeto 'geocode_cadastral' no encontrado</span></div><div class='input'>
+<span class='no'>cadastral_references</span>$<span class='no'>new</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/lapply'>lapply</a></span>(<span class='no'>cadastral_references</span>$<span class='no'>cadref1</span>, <span class='no'>geocode_cadastral</span>)
+
 <span class='co'>## separate previously generated "new" data into columns usign tidyr</span>
 
-<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/library'>library</a></span>(<span class='no'>tidyr</span>)
-<span class='fu'><a href='https://tidyr.tidyverse.org/reference/separate.html'>separate</a></span>(<span class='no'>cadastral_references</span>, <span class='no'>new</span>, <span class='kw'>into</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>'longitude'</span>,<span class='st'>'latitude'</span>), <span class='kw'>sep</span> <span class='kw'>=</span> <span class='st'>","</span> )</div><div class='output co'>#&gt; <span class='error'>Error: `var` must evaluate to a single number or a column name, not a function</span></div><div class='input'>
-## source is folder. A loop is needed to process each kml file ##
+<span class='co'># library(tidyr)</span>
+<span class='co'># separate(cadastral_references, new, into = c('longitude','latitude'), sep = "," )</span>
 
-</div><span class='co'># NOT RUN {</span>
-<span class='no'>files</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/list.files'>list.files</a></span>(<span class='st'>"folder"</span>, <span class='kw'>full.names</span> <span class='kw'>=</span> <span class='no'>T</span>)
+<span class='co'>## source is folder. A loop is needed to process each kml file ##</span>
 
-<span class='kw'>for</span> (<span class='no'>f</span> <span class='kw'>in</span> <span class='no'>files</span>) {
- <span class='no'>coords</span> <span class='kw'>&lt;-</span> <span class='fu'>geocode_cadastral</span>(<span class='no'>f</span>, <span class='kw'>parse_files</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
- <span class='no'>d</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/as.data.frame'>as.data.frame</a></span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/cbind'>rbind</a></span>(<span class='no'>d</span> , <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/as.data.frame'>as.data.frame</a></span>(<span class='no'>coords</span>, <span class='kw'>stringsAsFactors</span> <span class='kw'>=</span> <span class='no'>F</span> )))
-}
+<span class='co'># files &lt;- list.files("folder", full.names = T)</span>
+
+<span class='co'># for (f in files) {</span>
+<span class='co'>#  coords &lt;- geocode_cadastral(f, parse_files = TRUE)</span>
+<span class='co'># d &lt;- as.data.frame(rbind(d , as.data.frame(coords, stringsAsFactors = F )))</span>
+<span class='co'># }</span>
 
 <span class='co'># separate lat/lon into columns if you prefer using tidyr</span>
-<span class='no'>d</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>tidyr</span><span class='kw ns'>::</span><span class='fu'><a href='https://tidyr.tidyverse.org/reference/separate.html'>separate</a></span>(<span class='no'>coords</span>, <span class='kw'>into</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"longitude"</span>,<span class='st'>"latitude"</span>), <span class='kw'>sep</span> <span class='kw'>=</span> <span class='st'>","</span> )
+<span class='co'># d &lt;- tidyr::separate(coords, into = c("longitude","latitude"), sep = "," )</span>
 <span class='co'># }</span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

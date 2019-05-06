@@ -3,9 +3,6 @@
 \name{to_number}
 \alias{to_number}
 \title{translate spanish spelled quantities into their integer counterparts.}
-\usage{
-to_number(x)
-}
 \arguments{
 \item{x}{A spanish spelled number.}
 }
@@ -18,7 +15,7 @@ The upper limit is up to the millions range. Cents must be removed.
 \examples{
 to_number("mil trescientos noventa y dos")
 
-Example dataframe is provided: cantidades
+Example table is provided: cantidades
 cantidades$var3 <- lapply(cantidades$var2, to_number)
 
 }

@@ -3,9 +3,6 @@
 \name{to_words}
 \alias{to_words}
 \title{From integers to spanish spelled quantities.}
-\usage{
-to_words(x)
-}
 \arguments{
 \item{x}{A valid integer amount.}
 }
