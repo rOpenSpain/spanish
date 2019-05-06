@@ -5,19 +5,19 @@
 #' Quantities MUST be written in a correct Spanish (this is not a grammar tool)
 #' The upper limit is up to the millions range. Cents must be removed.
 #'
-#' @keywords money, currency, euros
-#' @export
 #' @param x A spanish spelled number.
 #' @examples
 #' to_number("mil trescientos noventa y dos")
 #'
-#'
-#' ## Example dataframe is provided: cantidades
-#'
+#' Example dataframe is provided: cantidades
 #' cantidades$var3 <- lapply(cantidades$var2, to_number)
 #'
+#' @keywords money, currency, euros, translate
+#' @export
+
 
 utils::globalVariables(".")
+
 
 to_number <- function(x) {
 

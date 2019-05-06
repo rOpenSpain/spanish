@@ -1,10 +1,16 @@
 #' From integers to spanish spelled quantities.
 #'
+#' Takes any integer from zero to millions range and returns spanish characters
+#'
 #'
 #' @keywords spanish, integers, money, quantities.
 #' @param x A valid integer amount.
 #' @return A string for the same integer number in spanish.
 #' @export
+
+
+
+utils::globalVariables(".")
 
 
 to_words <- function(x) {

@@ -13,7 +13,7 @@ to_words(x)
 A string for the same integer number in spanish.
 }
 \description{
-From integers to spanish spelled quantities.
+Takes any integer from zero to millions range and returns spanish characters
 }
 \keyword{integers,}
 \keyword{money,}

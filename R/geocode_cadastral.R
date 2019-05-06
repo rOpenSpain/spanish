@@ -7,7 +7,6 @@
 #' @param parse_files bool. Default to FALSE. Set TRUE if source are KML files.
 #' @return A string for longitude/latitude if found. NA if not found.
 #' @section Warning: You may be banned if many requests in short time are made.
-#' @export
 #' @examples
 #' ## source is cadastral reference number ##
 #' \dontrun{
@@ -20,7 +19,7 @@
 #' cadastral_references$new <- lapply(cadastral_references$cadref1, geocode_cadastral)
 #'
 #' ## separate previously generated "new" data into columns usign tidyr
-#' 
+#'
 #' # library(tidyr)
 #' # separate(cadastral_references, new, into = c('longitude','latitude'), sep = "," )
 #'
@@ -36,41 +35,45 @@
 #'# separate lat/lon into columns if you prefer using tidyr
 #' # d <- tidyr::separate(coords, into = c("longitude","latitude"), sep = "," )
 #'}
+#' @export
+
+
 
 utils::globalVariables(".")
 
+
 geocode_cadastral <- function(x, parse_files) {
-  
+
   if (missing(parse_files)) {
     parse_files <- FALSE
   }
-  
+
   if (!requireNamespace("magrittr", quietly = TRUE)) {
     stop("magrittr needed for this function to work. Please install it.",
          call. = FALSE)
   }
-  
+
   if (!requireNamespace("xml2", quietly = TRUE)) {
     stop("xml2 needed for this function to work. Please install it.",
          call. = FALSE)
   }
-  
-  
+
+
   if (parse_files) {
-    
+
     con <- file(x, "rb")
-    
+
   } else {
-    
+
     con <-
       paste0(
         "http://ovc.catastro.meh.es/Cartografia/WMS/BuscarParcelaGoogle.aspx?RefCat=",
         x
       )
     Sys.sleep(2)
-    
+
   }
-  
+
   try(
     coords <- xml2::read_xml(con) %>%
     sub("kml xmlns", "kml xmlns:X", .) %>%
@@ -79,12 +82,12 @@ geocode_cadastral <- function(x, parse_files) {
     xml2::xml_text() %>%
     gsub('.{2}$', '', .),
     silent = TRUE)
-  
+
   if (length(coords) == 0) coords <- NA
 
   if (parse_files) close(con)
-  
+
   return(coords)
-  
+
 }
 
