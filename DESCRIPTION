@@ -21,6 +21,7 @@ Collate:
     'cadastral_references-data.R'
     'to_number.R'
     'cantidades-data.R'
+    'to_words.R'
     'spanish.R'
 RoxygenNote: 6.1.1
 Suggests: testthat, tidyr
