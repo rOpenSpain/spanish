@@ -3,3 +3,4 @@
 import(magrittr)
 import(xml2)
 export(to_number)
+export(geocode_cadastral)

@@ -17,6 +17,8 @@ License: GPL-3
 Encoding: UTF-8
 LazyData: true
 Collate:
+    'geocode_cadastral.R'
+    'cadastral_references-data.R'
     'to_number.R'
     'cantidades-data.R'
     'spanish.R'
