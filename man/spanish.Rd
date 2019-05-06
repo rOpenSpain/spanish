@@ -7,7 +7,7 @@
 \title{spanish: A package for spanish related data functions.}
 \description{
 The spanish package provides some functions for spanish data:
-to_number()  geocode_cadastral() to_words()
+to_number(), geocode_cadastral(), to_words()
 }
 \section{to_number()}{
 
@@ -21,7 +21,9 @@ The upper limit is up to the millions range. Cents must be removed.
 
 \section{to_words()}{
 
-Translate to spanish spelled quantities from integers
+Translate any integer to character streing in spanish spelled quantities.
+The upper limit is up to the millions range. Cents must be removed.
+(in my TODO list to parse cents part)
 }
 
 \section{geocode_cadastral()}{

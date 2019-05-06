@@ -22,6 +22,7 @@ Collate:
     'to_number.R'
     'cantidades-data.R'
     'to_words.R'
+    'utils-pipe.R'
     'spanish.R'
 RoxygenNote: 6.1.1
 Suggests: testthat, tidyr
