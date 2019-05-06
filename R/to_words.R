@@ -7,6 +7,7 @@
 #' @param x A valid integer amount.
 #' @return A string for the same integer number in spanish.
 #' @name to_words
+#' @importFrom magrittr %>%
 #' @export
 
 

@@ -9,11 +9,11 @@
 #' @examples
 #' to_number("mil trescientos noventa y dos")
 #'
-#' Example table is provided: cantidades
+#' # Example table is provided: cantidades
 #' cantidades$var3 <- lapply(cantidades$var2, to_number)
-#'
 #' @name to_number
 #' @keywords money, currency, euros, translate
+#' @importFrom magrittr %>%
 #' @export
 
 

@@ -36,6 +36,7 @@
 #' # d <- tidyr::separate(coords, into = c("longitude","latitude"), sep = "," )
 #'}
 #' @name geocode_cadastral
+#' @importFrom magrittr %>%
 #' @export
 
 

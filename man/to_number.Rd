@@ -15,9 +15,8 @@ The upper limit is up to the millions range. Cents must be removed.
 \examples{
 to_number("mil trescientos noventa y dos")
 
-Example table is provided: cantidades
+# Example table is provided: cantidades
 cantidades$var3 <- lapply(cantidades$var2, to_number)
-
 }
 \keyword{currency,}
 \keyword{euros,}

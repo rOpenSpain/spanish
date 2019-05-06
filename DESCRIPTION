@@ -25,4 +25,4 @@ Collate:
     'spanish.R'
 RoxygenNote: 6.1.1
 Suggests: testthat, tidyr
-Depends: magrittr,xml2
+
