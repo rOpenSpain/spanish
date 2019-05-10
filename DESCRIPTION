@@ -1,7 +1,7 @@
 Package: spanish
 Type: Package
-Title: Translate Quantities from Strings to Integer and Back. Geocode Cadastral References
-Version: 0.4.1
+Title: Translate Quantities from Strings to Integer and Back. Misc Functions on Spanish Data.
+Version: 0.4.2
 Date: 2019-05-10
 Authors@R: person( "Jose Manuel","Vera Oteo", email = "vera.josemanuel@gmail.com",
                 role = c("aut","cre"))
