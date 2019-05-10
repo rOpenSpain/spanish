@@ -1,18 +1,16 @@
 Package: spanish
 Type: Package
-Title: Translate Quantities from Strings Spelled in Spanish to Integer
+Title: Translate Quantities from Strings to Integer and back. Geocode Cadastral References
 Version: 0.4
-Date: 2017-12-14
+Date: 2019-05-10
 Authors@R: person( "Jose Manuel","Vera Oteo", email = "vera.josemanuel@gmail.com",
                 role = c("aut","cre"))
-URL: https://ropenspain.github.io/spanish/
+URL:  https://CRAN.R-project.org/package=spanish
 BugReports: https://github.com/verajosemanuel/spanish/issues
 Imports: magrittr, xml2
 Description: Character vector to numerical translation in Euros from Spanish
-    spelled monetary quantities. Text must be previously cleaned & removed
-    extraneous words, symbols or cents. Quantities MUST be written in a correct
-    Spanish cause this isn't a grammar tool. Upper limit is up to the millions
-    range. Reverse translation using to_words. Geocoding via Cadastral site.
+    spelled monetary quantities. Reverse translation from integer to Spanish.
+    Upper limit is up to the millions range. Geocoding via Cadastral web site.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
