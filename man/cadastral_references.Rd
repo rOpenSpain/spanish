@@ -4,7 +4,9 @@
 \name{cadastral_references}
 \alias{cadastral_references}
 \title{Cadastral references test data}
-\format{A data frame.}
+\format{
+A data frame.
+}
 \source{
 \href{http://www.catastro.meh.es/}{Sede Electrónica del Catastro}
 }

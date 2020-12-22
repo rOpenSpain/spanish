@@ -3,7 +3,6 @@
 \docType{package}
 \name{spanish}
 \alias{spanish}
-\alias{spanish-package}
 \title{spanish: A package for spanish related data functions.}
 \description{
 The spanish package provides some functions for spanish data:

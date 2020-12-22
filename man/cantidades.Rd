@@ -4,7 +4,9 @@
 \name{cantidades}
 \alias{cantidades}
 \title{Cantidades test data}
-\format{A data frame.}
+\format{
+A data frame.
+}
 \usage{
 data(cantidades)
 }
