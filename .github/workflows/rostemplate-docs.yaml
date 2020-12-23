@@ -4,10 +4,10 @@ on:
       - main
       - master
 
-name: rostemplate-gh-pages
+name: rostemplate-docs
 
 jobs:
-  rostemplate-gh-pages:
+  rostemplate-docs:
     runs-on: macOS-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
@@ -45,6 +45,13 @@ jobs:
 
       - name: Deploy package
         run: |
+          Rscript -e 'pkgdown::clean_site()'
+          Rscript -e 'pkgdown::build_site(new_process = FALSE)'
+
+      - name: Commit results
+        run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
-          Rscript -e 'pkgdown::deploy_to_branch(new_process = FALSE, clean = TRUE)'
+          git add -A
+          git commit -m 'Build pkgdown' || echo "No changes to commit"
+          git push origin || echo "No changes to commit"
