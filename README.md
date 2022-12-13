@@ -135,7 +135,7 @@ separate lat/lon into columns the same as before
 - magrittr must be installed.
 - to_number() needs clean text. So it must be previously cleaned & removed extraneous words, symbols or cents.
 - to_number() quantities MUST be written in a correct Spanish (this is not a grammar tool).
-- to_words() does not keep sign. If negative numbers are provided, their positive is used for conversion.
+- to_words() does keep sign. If negative numbers are provided, the sign is used for conversion.
 - The upper limit is up to the millions range in both cases.
 - geocode_cadastral() requests to catastro website. So notice if website is alive and working. 
 
@@ -147,6 +147,5 @@ separate lat/lon into columns the same as before
 
 - Try to clean text prior to be used by to_number()
 - Include decimals (cents) in to_number() function
-- Force to_words() keep sign
 
 
