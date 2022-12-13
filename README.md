@@ -2,7 +2,7 @@
 
 ![spanish logo](man/figures/logo.png)
 
-
+*latest version is github version: 0.5.0*
 
 There are some special data in spain that is not addressed by any R package or function. Mainly on data processing and NLP.
 This package is my humble (and objectionable) attempt of helping programmers working with this kind of data creating some functions for it.
