@@ -1,7 +1,7 @@
 Package: spanish
 Type: Package
 Title: Translate Quantities from Strings Spelled in Spanish to Integer
-Version: 0.3.1
+Version: 0.5.0
 Date: 2017-12-14
 Authors@R: person( "Jose Manuel","Vera Oteo", email = "vera.josemanuel@gmail.com",
                 role = c("aut","cre"))
