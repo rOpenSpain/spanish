@@ -92,8 +92,19 @@ to_words <- function(x) {
 
     } else if (len == 4) {
 
-      x <- as.vector(paste0(units[digits[4]],"mil ",hundred[digits[3]]," ", if (as.numeric(paste0(digits[2],digits[3])) <= 19) as.vector(dozens[digits[1]]) else as.vector(paste0(tens[digits[2]]," y ", units[digits[1]]))))
-
+      #x <- as.vector(paste0(units[digits[4]],"mil ",hundred[digits[3]]," ", if (as.numeric(paste0(digits[2],digits[3])) <= 19) as.vector(dozens[digits[1]]) else as.vector(paste0(tens[digits[2]]," y ", units[digits[1]]))))
+      x <- as.vector(
+        paste0(
+          units[digits[4]], "mil ", ## thousands, no changes
+          hundred[digits[3]], " ", ## hundreds, no changes
+          ifelse(
+            as.numeric(paste0(digits[2], digits[3])) < 10, ## in case there are no tens (numbers ending in 0x), this is the main change
+            units[digits[1]], ## return only the units
+            ifelse(as.numeric(paste0(digits[2], digits[3])) <= 19, # these are the cases with the weird names, no changes from here on
+                   as.vector(dozens[digits[1]]),
+                   as.vector(paste0(
+                     tens[digits[2]]," y ",
+                     units[digits[1]]))))))
     }
 
 
